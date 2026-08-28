@@ -1,0 +1,25 @@
+{
+  "name": "hermex",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.24.0",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "web:dev": "pnpm --filter @hermex/web dev",
+    "web:build": "pnpm --filter @hermex/web build",
+    "web:lint": "pnpm --filter @hermex/web lint",
+    "api:dev": "pnpm --filter @hermex/api start:dev",
+    "api:build": "pnpm --filter @hermex/api build",
+    "api:lint": "pnpm --filter @hermex/api lint",
+    "api:test": "pnpm --filter @hermex/api test",
+    "prisma:generate": "pnpm --filter @hermex/api prisma:generate",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down"
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "typescript": "5.9.3"
+  }
+}
