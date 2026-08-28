@@ -10,6 +10,8 @@
     "web:dev": "pnpm --filter @hermex/web dev",
     "web:build": "pnpm --filter @hermex/web build",
     "web:lint": "pnpm --filter @hermex/web lint",
+    "web:storybook": "pnpm --filter @hermex/web storybook",
+    "web:build-storybook": "pnpm --filter @hermex/web build-storybook",
     "api:dev": "pnpm --filter @hermex/api start:dev",
     "api:build": "pnpm --filter @hermex/api build",
     "api:lint": "pnpm --filter @hermex/api lint",

@@ -7,6 +7,12 @@
   --surface: #ffffff;
   --border: #deded8;
   --accent: #0f766e;
+  --brand-primary-pure: #f29849;
+  --brand-primary-dark: #e28634;
+  --brand-secondary-pure: #1d2f40;
+  --brand-secondary-dark: #23384d;
+  --neutral-text: #444444;
+  --neutral-details: #e7e7e7;
 }
 
 body {
@@ -21,3 +27,16 @@ a {
   text-decoration: none;
 }
 
+.material-symbols-outlined {
+  direction: ltr;
+  display: inline-block;
+  font-family: "Material Symbols Outlined", "Material Icons", sans-serif;
+  font-feature-settings: "liga";
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+}
