@@ -1,20 +1,60 @@
-import { AppStatus } from "@/components/molecules/AppStatus";
-import { Header } from "@/components/organisms/Header";
+"use client";
 
-export function HomeTemplate() {
+import {
+  Footer,
+  Header,
+  HeroBanner,
+  SearchBar,
+  type SearchBarValues,
+  VehicleGrid,
+  type VehicleGridCategory,
+  type VehicleGridVehicle,
+} from "@/components/organisms";
+
+type HomeTemplateProps = {
+  categories: VehicleGridCategory[];
+  onCategoryChange?: (categoryId: string | null) => void;
+  onDetailsClick?: (vehicleId: string) => void;
+  onSearch?: (values: SearchBarValues) => void;
+  searchErrorMessage?: string;
+  selectedCategoryId?: string | null;
+  showClearSearchButton?: boolean;
+  vehicles: VehicleGridVehicle[];
+};
+
+export function HomeTemplate({
+  categories,
+  onCategoryChange,
+  onDetailsClick,
+  onSearch,
+  searchErrorMessage,
+  selectedCategoryId = null,
+  showClearSearchButton = false,
+  vehicles,
+}: HomeTemplateProps) {
   return (
-    <main>
+    <main className="min-h-screen bg-[var(--background)]">
       <Header />
-      <section className="mx-auto max-w-6xl px-6 py-10">
-        <h1 className="text-3xl font-semibold">Hermex</h1>
-        <p className="mt-3 max-w-2xl text-base text-[var(--muted)]">
-          Base do monorepo configurada para evoluir o produto.
-        </p>
-        <div className="mt-8 max-w-lg">
-          <AppStatus />
-        </div>
-      </section>
+      <HeroBanner />
+      <div className="relative z-20 mx-auto -mt-16 max-w-6xl px-4 sm:px-6">
+        <SearchBar
+          errorMessage={searchErrorMessage}
+          onSearch={onSearch}
+          showClearButton={showClearSearchButton}
+        />
+      </div>
+      <VehicleGrid
+        categories={categories}
+        onCategoryChange={onCategoryChange}
+        onDetailsClick={onDetailsClick}
+        selectedCategoryId={selectedCategoryId}
+        vehicles={vehicles}
+      />
+      <Footer
+        instagramHref="https://www.instagram.com/"
+        tiktokHref="https://www.tiktok.com/"
+        whatsappHref="https://www.whatsapp.com/"
+      />
     </main>
   );
 }
-

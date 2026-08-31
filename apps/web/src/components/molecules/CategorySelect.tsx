@@ -9,12 +9,14 @@ type CategoryOption = {
 };
 
 type CategorySelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
+  emptyOptionLabel?: string;
   options?: CategoryOption[];
   placeholder?: string;
 };
 
 export function CategorySelect({
   className,
+  emptyOptionLabel,
   options = [],
   placeholder = "Selecione a categoria",
   ...props
@@ -27,9 +29,13 @@ export function CategorySelect({
         defaultValue=""
         {...props}
       >
-        <option disabled value="">
-          {placeholder}
-        </option>
+        {emptyOptionLabel ? (
+          <option value="">{emptyOptionLabel}</option>
+        ) : (
+          <option disabled value="">
+            {placeholder}
+          </option>
+        )}
         {options.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
