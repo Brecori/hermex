@@ -2,10 +2,13 @@ import { cn } from "@/components/_utils/classNames";
 
 export type IconName =
   | "account_circle"
+  | "calendar_today"
   | "calendar_month"
   | "keyboard_arrow_down"
   | "location_on"
   | "login"
+  | "person_add"
+  | "schedule"
   | "search";
 
 type IconProps = {
