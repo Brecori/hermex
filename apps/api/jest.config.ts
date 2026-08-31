@@ -8,6 +8,8 @@ const config: Config = {
     "^.+\\.(t|j)s$": "ts-jest",
   },
   moduleNameMapper: {
+    "^\\.\\./prisma/prisma\\.service$": "<rootDir>/test/mocks/prisma-service.ts",
+    "^@nestjs/common$": "<rootDir>/test/mocks/nestjs-common.ts",
     "^@nestjs/graphql$": "<rootDir>/test/mocks/nestjs-graphql.ts",
   },
   collectCoverageFrom: ["src/**/*.(t|j)s"],
